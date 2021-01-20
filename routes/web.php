@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/cyclothon-21', 'CyclothonController@showForm');
-Route::redirect('/', '/login');
+Route::redirect('/', '/cyclothon-21');
 
 Route::redirect('/home', '/admin');
 
