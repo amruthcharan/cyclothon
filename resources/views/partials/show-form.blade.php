@@ -7,7 +7,7 @@
                 <input type="text" name="name" class="form-control" placeholder="Your Name *" value="" required />
             </div>
             <div class="form-group">
-                <select required type="text" name="class" class="form-control" required>
+                <select required type="text" name="class" class="form-control">
                     <option value>== Select Class ==</option>
                     <option value="1st class">1st class</option>
                     <option value="2nd class">2nd class</option>
@@ -44,7 +44,7 @@
             <input type="hidden" value="450" name="price">
             <h4 class="text-center pb-3">Amount to be paid: Rs.<span id="price">450</span>/-</h4>
             <div class="form-group">
-                <button type="submit" class="btnContact btn-block"> Register Now</button>
+                <input type="submit" name="btnSubmit" class="btnContact btn-block" value="Register Now" />
             </div>
         </div>
     </div>
