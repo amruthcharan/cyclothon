@@ -20,7 +20,7 @@
                     </h6>
                     <div class="ml-5 mb-2">
                         Phone Number:  +919963887998 <br>
-                        Name : Srinivas
+                        Name : Sudhakar
                     </div>
                     <h6 class="text-center text-danger">Please add your registration number ({{$id}}) as comment while paying.</h6>
                 </div>
