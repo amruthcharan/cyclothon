@@ -14,6 +14,7 @@ class CyclothonController extends Controller
      */
     public function index()
     {
+        return redirect('/cyclothon-21');
     }
 
     /**
