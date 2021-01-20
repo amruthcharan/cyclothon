@@ -15,7 +15,14 @@
                         <br>
                         and your registered ID is <span class="text-danger">{{$id}}</span>
                     </h3>
-                    <h6 class="mt-5 text-center">Please pay Rs.{{$amount}}/- to +919963887998 on PhonePe or GooglePay</h6>
+                    <h6 class="mt-5 text-center">
+                        Please pay Rs.{{$amount}}/- on PhonePe or GooglePay for below details:
+                    </h6>
+                    <div class="ml-5 mb-2">
+                        Phone Number:  +919963887998 <br>
+                        Name : Srinivas
+                    </div>
+                    <h6 class="text-center text-danger">Please add your registration number ({{$id}}) as comment while paying.</h6>
                 </div>
             </div>
             </form>
