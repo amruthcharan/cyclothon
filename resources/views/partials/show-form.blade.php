@@ -56,7 +56,7 @@
                     I need cycle for rent
                 </label>
             </div>
-            <input type="hidden" value="450" name="price">
+            <input type="hidden" value="200" name="price">
             <h4 class="text-center pb-3">Amount to be paid: Rs.<span id="price">200</span>/-</h4>
             <div class="form-group">
                 <input type="submit" name="btnSubmit" class="btnContact btn-block" value="Register Now" />
