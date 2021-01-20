@@ -1,4 +1,4 @@
-<form method="post" action="/cyclothon">
+<form method="POST" action="/cyclothon">
     @csrf
     <h3>Register Now</h3>
     <div class="row">
