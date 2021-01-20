@@ -1,10 +1,12 @@
 <?php
 
+Route::get('/cyclothon-21', 'CyclothonController@showForm');
 Route::redirect('/', '/login');
 
 Route::redirect('/home', '/admin');
 
 Auth::routes(['register' => false]);
+Route::resource('/cyclothon', 'CyclothonController');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
