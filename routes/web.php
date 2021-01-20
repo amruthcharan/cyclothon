@@ -6,7 +6,8 @@ Route::redirect('/', '/cyclothon-21');
 Route::redirect('/home', '/admin');
 
 Auth::routes(['register' => false]);
-Route::resource('/cyclothon', 'CyclothonController');
+Route::post('cyclothon', 'CyclothonController@store');
+Route::get('cyclothon/{id}', 'CyclothonController@show');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
