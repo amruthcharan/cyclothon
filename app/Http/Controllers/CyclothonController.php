@@ -12,9 +12,12 @@ class CyclothonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
+        $input = $request->all();
+        $input['status'] = 'created';
+        $register = Cyclothon::create($input);
+        return redirect('cyclothon/'. $register->id);
     }
 
     /**

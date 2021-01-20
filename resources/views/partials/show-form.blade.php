@@ -1,4 +1,4 @@
-<form method="POST" action="{{route('cyclothon.store')}}">
+<form method="GET" action="{{url('/cyclothon')}}">
     @csrf
     <h3>Register Now</h3>
     <div class="row">
