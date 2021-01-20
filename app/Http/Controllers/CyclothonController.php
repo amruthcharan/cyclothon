@@ -38,6 +38,7 @@ class CyclothonController extends Controller
         $input = $request->all();
         $input['status'] = 'created';
         $register = Cyclothon::create($input);
+        return $register;
         return redirect('cyclothon/'. $register->id);
     }
 
