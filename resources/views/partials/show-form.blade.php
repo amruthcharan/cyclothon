@@ -44,7 +44,7 @@
             <input type="hidden" value="450" name="price">
             <h4 class="text-center pb-3">Amount to be paid: Rs.<span id="price">450</span>/-</h4>
             <div class="form-group">
-                <input type="submit" name="btnSubmit" class="btnContact btn-block" value="Register Now" />
+                <button type="submit" class="btnContact btn-block"> Register Now</button>
             </div>
         </div>
     </div>
