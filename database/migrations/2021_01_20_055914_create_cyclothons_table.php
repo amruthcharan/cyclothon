@@ -20,6 +20,7 @@ class CreateCyclothonsTable extends Migration
             $table->string('category');
             $table->string('cycle_type');
             $table->string('status');
+            $table->string('tshirt');
             $table->integer('price');
             $table->timestamps();
         });

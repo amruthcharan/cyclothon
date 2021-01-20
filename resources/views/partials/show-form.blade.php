@@ -24,6 +24,15 @@
                 </select>
             </div>
             <div class="form-group">
+                <select required type="text" name="tshirt" class="form-control">
+                    <option value>== Select T-shirt size ==</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="xl">xl</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <select required type="text" name="category" class="form-control">
                     <option value>== Select Category ==</option>
                     <option>5 KM (6th and below)</option>
