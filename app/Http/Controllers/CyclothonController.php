@@ -15,6 +15,9 @@ class CyclothonController extends Controller
     public function index(Request $request)
     {
         $input = $request->all();
+        if (!$input) {
+            return redirect('/cyclothon-21');
+        }
         $input['status'] = 'created';
         $register = Cyclothon::create($input);
         return redirect('cyclothon/'. $register->id);
