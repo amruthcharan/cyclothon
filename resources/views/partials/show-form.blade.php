@@ -37,6 +37,7 @@
                 <select required type="text" name="category" class="form-control">
                     <option value>== Select Category ==</option>
                     <option>Kids below 12 years - 5 KM</option>
+                    <option>Kids above 12 years - 5 KM</option>
                     <option>Kids above 12 years - 10 KM</option>
                     <option>Adult - Men - 5 KM</option>
                     <option>Adult - Men - 10 KM</option>
