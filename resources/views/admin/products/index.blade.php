@@ -12,6 +12,7 @@
                         <th width="10">
 
                         </th>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Cycle Required</th>
@@ -27,6 +28,7 @@
                             <td>
 
                             </td>
+                            <td>{{$product->id}}</td>
                             <td>
                                 {{ $product->name ?? '' }}
                             </td>
