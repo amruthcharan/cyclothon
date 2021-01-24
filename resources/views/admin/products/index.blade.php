@@ -1,18 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-@can('product_create')
-    <div style="margin-bottom: 10px;" class="row">
-        <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route("admin.products.create") }}">
-                {{ trans('global.add') }} {{ trans('global.product.title_singular') }}
-            </a>
-        </div>
-    </div>
-@endcan
+
 <div class="card">
-    <div class="card-header">
-        {{ trans('global.product.title_singular') }} {{ trans('global.list') }}
-    </div>
+    <div class="card-header">Registrations</div>
 
     <div class="card-body">
         <div class="table-responsive">
@@ -22,22 +12,17 @@
                         <th width="10">
 
                         </th>
-                        <th>
-                            {{ trans('global.product.fields.name') }}
-                        </th>
-                        <th>
-                            {{ trans('global.product.fields.description') }}
-                        </th>
-                        <th>
-                            {{ trans('global.product.fields.price') }}
-                        </th>
-                        <th>
-                            &nbsp;
-                        </th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Cycle Required</th>
+                        <th>T-shirt size</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($products as $key => $product)
+                    @foreach($cylothons as $key => $product)
                         <tr data-entry-id="{{ $product->id }}">
                             <td>
 
@@ -46,24 +31,31 @@
                                 {{ $product->name ?? '' }}
                             </td>
                             <td>
-                                {{ $product->description ?? '' }}
+                                {{ $product->category ?? '' }}
+                            </td>
+                            <td>
+                                {{ $product->cycle_type == 'need cycle' ? 'yes' : 'no' }}
+                            </td>
+                            <td>
+                                {{ $product->tshirt ?? '' }}
                             </td>
                             <td>
                                 {{ $product->price ?? '' }}
                             </td>
                             <td>
-                                @can('product_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.products.show', $product->id) }}">
-                                        {{ trans('global.view') }}
-                                    </a>
-                                @endcan
+                                {{ $product->status ?? '' }}
+                            </td>
+                            <td>
+
                                 @can('product_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.products.edit', $product->id) }}">
-                                        {{ trans('global.edit') }}
-                                    </a>
+                                    @if($product->status !== 'paid')
+                                        <a class="btn btn-xs btn-info" href="{{ route('admin.cyclothon.map', $product->id) }}">
+                                            Mark As Paid
+                                        </a>
+                                    @endif
                                 @endcan
                                 @can('product_delete')
-                                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.cyclothon.destroy', $product->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -85,7 +77,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.products.massDestroy') }}",
+    url: "{{ route('admin.cyclothon.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

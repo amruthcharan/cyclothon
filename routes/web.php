@@ -24,7 +24,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::resource('users', 'UsersController');
 
-    Route::delete('products/destroy', 'ProductsController@massDestroy')->name('products.massDestroy');
+    Route::delete('cyclothon/destroy', 'CyclothonController@massDestroy')->name('cyclothon.massDestroy');
 
-    Route::resource('products', 'ProductsController');
+    Route::resource('cyclothon', 'CyclothonController');
+    Route::get('cyclothon/{id}/map', 'CyclothonController@map')->name('cyclothon.map');
 });

@@ -59,7 +59,7 @@ class CyclothonController extends Controller
         $success = true;
         $id = $cyclothon->id;
         $amount = $cyclothon->price;
-        return view('home', compact(['success', 'id', 'amount']));
+        return view('welcome', compact(['success', 'id', 'amount']));
     }
 
     /**
@@ -99,6 +99,6 @@ class CyclothonController extends Controller
     public function showForm()
     {
         $success = false;
-        return view('home', compact('success'));
+        return view('welcome', compact('success'));
     }
 }
